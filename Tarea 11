@@ -16,16 +16,15 @@ def fibonacci_diccionario(n):
 
     return A[n]
 
-def fibonacci_memorizacion(n, memo={}):
-    # entrada: Un número entero n, un diccionario memo
+def fibonacci_arreglos(n):
+    # entrada: Un número entero n
     # salida: El n-ésimo número de Fibonacci
-    if n in memo:
-        return memo[n]
+    A = [0] * (n + 1)  # Crear un arreglo de tamaño n + 1
+    
+    A[0] = 0
+    A[1] = 1
 
-    if n <= 0:
-        return 0
-    elif n == 1:
-        return 1
+    for i in range(2, n + 1):
+        A[i] = A[i - 1] + A[i - 2]
 
-    memo[n] = fibonacci_memorizacion(n - 1, memo) + fibonacci_memorizacion(n - 2, memo)
-    return memo[n]
+    return A[n]
