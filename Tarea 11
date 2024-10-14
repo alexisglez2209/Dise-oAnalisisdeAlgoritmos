@@ -1,3 +1,4 @@
+//Puse los dos códigos aqui para no poner dos archivos
 def fibonacci_diccionario(n):
     # entrada: Un número entero n
     # salida: El n-ésimo número de Fibonacci
