@@ -1,0 +1,22 @@
+def busqueda_binaria(A, elem):
+    n = len(A)
+    
+    if n <= 0:
+        return -1  
+    
+    m = n // 2 
+
+    if A[m] == elem:
+        return m  
+    elif A[m] < elem:
+        # Buscar en la mitad derecha
+        resultado = busqueda_binaria(A[m + 1:], elem)
+        return m + 1 + resultado if resultado != -1 else -1
+    else:
+        return busqueda_binaria(A[:m], elem)
+
+A = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+elemento = 5
+indice = busqueda_binaria(A, elemento)
+
+print(f"Índice del elemento {elemento}: {indice}")
