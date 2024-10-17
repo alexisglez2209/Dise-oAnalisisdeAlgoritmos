@@ -1,0 +1,20 @@
+def es_palindromo(x):
+    # entrada: Un número entero x
+    # salida: Verdadero si x es un palíndromo, Falso en caso contrario.
+
+    if x < 1 or x >= 1000:
+        return False
+
+    original = x
+    revertido = 0
+
+    while x > 0:
+        digito = x % 10        
+        revertido = revertido * 10 + digito  
+        x //= 10               
+
+    return original == revertido  
+
+
+x = 121
+print(es_palindromo(x))  
